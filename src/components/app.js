@@ -1,9 +1,9 @@
 import React from 'react';
 import './app.css';
-import LandingPage from './landing_page';
+import HomePage from './home_page';
+
 
 const App = () => (
-        <LandingPage/>
+    <HomePage/>
 );
-
 export default App;

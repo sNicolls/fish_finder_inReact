@@ -175,6 +175,7 @@ body{
 }
 
 @media only screen and (min-width: 500px) {
+
     .online_text{
         font-size: 25%;
         letter-spacing: 3vw;
@@ -214,55 +215,4 @@ body{
         height: 75px;
         margin-bottom: 1vh;
     }
-}
-
-
-
-
-
-.glyphicon-play{
-    color: white;
-}
-.video_info, .track_info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.track_control, .video_control{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-/*IFRAME*/
-
-
-.change_media_btn{
-    width: 50px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.picture_frame{
-    width: 100%;
-    height: 25vh;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-.info_label{
-    font-family: "Iceland";
-    font-size: 16px;
-    color: white;
-    text-shadow: 0 0 5px black, 0 0 10px blue, 0 0 55px white, 0 0 25px blue;
-}
-.info_data{
-    font-family: "Iceland";
-    font-size: 16px;
-    color: white;
-    width: 200px;
-    height: 16px;
-    overflow: scroll;
-    text-align: center;
 }

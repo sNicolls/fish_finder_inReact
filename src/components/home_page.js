@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './app.css';
-import FishBiting from './fish_biting_page';
+import MediaSandbox from './media_sandbox';
 
 
 export default class extends Component {
@@ -55,10 +55,7 @@ export default class extends Component {
         })
     }
     returnToHome(){
-        this.setState({
-            currentPage: 'home',
-            pause: 'true'
-        })
+        location.reload();
     }
     render() {
         const {imageUrl} = this.state.form;
@@ -107,7 +104,8 @@ export default class extends Component {
             return(
                 <div className="border_container">
                     <div className="border_top_bottom">
-                        <FishBiting imageUrl={imageUrl} />
+                        <MediaSandbox imageUrl={imageUrl} pause={this.state.pause}/>
+                        <button className="btn general_btn" onClick={this.returnToHome}>Home</button>
                     </div>
                 </div>
             )

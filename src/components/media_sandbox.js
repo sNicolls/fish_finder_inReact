@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './app.css';
 import './media_sandbox.css';
-const Clarifai = require('clarifai');
-import LandingPage from './home_page';
+const Clarifai = require('clarifai')
 
 export default class extends Component {
     constructor(props) {
@@ -19,8 +18,6 @@ export default class extends Component {
             audioElement: null,
             trackName: null,
             artistName: null,
-            pause: props.pause,
-            currentPage: 'fishBiting',
             videoUrl: null,
             videoIndex: null,
             audioIndex: null,
@@ -28,8 +25,7 @@ export default class extends Component {
         this.getAudio = this.getAudio.bind(this);
         this.handleAudio = this.handleAudio.bind(this);
         this.playAudio = this.playAudio.bind(this);
-        this.pauseAudio = this.pauseAudio.bind(this);
-        this.changeAudio = this.changeAudio.bind(this);
+
         this.getVideos = this.getVideos.bind(this);
         this.selectYouTubeVideo = this.selectYouTubeVideo.bind(this);
         this.getMedia = this.getMedia.bind(this);
@@ -96,14 +92,7 @@ export default class extends Component {
 
         this.state.audioElement.play()
     }
-    pauseAudio(){
-        this.state.audioElement.pause()
 
-    }
-    changeAudio(){
-        this.pauseAudio();
-        setTimeout(()=>{this.playAudio()}, 500);
-    }
 
     getVideos(){
         var searchArr= ["fish", "ocean", "sea", "shark", "creepy", "water", "explosion", "space"];
@@ -158,7 +147,7 @@ export default class extends Component {
     }
 
     forwardAudio(){
-        this.state.audioElement.pause()
+        this.state.audioElement.pause();
         setTimeout(()=>{
             if(this.state.audioIndex + 1 === this.state.audioArr.length){
                 this.setState({
@@ -186,7 +175,7 @@ export default class extends Component {
 
 
     backwardVideo(){
-        console.log(this.state.videoIndex)
+        console.log(this.state.videoIndex);
         if(this.state.videoIndex === 0){
             this.setState({
                 videoUrl: this.state.videoLinkArr[this.state.videoLinkArr.length - 1],
@@ -204,7 +193,7 @@ export default class extends Component {
 
 
     forwardVideo(){
-        console.log(this.state.videoIndex)
+        console.log(this.state.videoIndex);
         if(this.state.videoIndex === this.state.videoLinkArr.length - 1){
             this.setState({
                 videoUrl: this.state.videoLinkArr[0],
@@ -221,7 +210,7 @@ export default class extends Component {
     }
 
     render(){
-        console.log("PAWS", this.state.pause)
+        console.log("PAWS", this.state.pause);
         const { pause, videoTitle, audioElement, videoUrl, imageUrl, trackName, artistName } = this.state;
         if(pause === 'true'){
             audioElement.pause();

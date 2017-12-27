@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './app.css';
 import MediaSandbox from './media_sandbox';
 
-
 export default class extends Component {
     constructor(props){
         super(props);
@@ -12,7 +11,6 @@ export default class extends Component {
                 },
             modalState : 'hideModal',
             currentPage: 'home',
-            pause: 'false'
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,7 +29,7 @@ export default class extends Component {
     handleSubmit(event){
         event.preventDefault();
         this.setState({
-            currentPage: 'fishBiting'
+            currentPage: 'media_sandbox'
         });
     }
     toggleModal(ev) {
@@ -100,7 +98,7 @@ export default class extends Component {
                     </div>
                 </div>
             )
-        } else if (this.state.currentPage === 'fishBiting'){
+        } else if (this.state.currentPage === 'media_sandbox'){
             return(
                 <div className="border_container">
                     <div className="border_top_bottom">
